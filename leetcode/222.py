@@ -6,3 +6,6 @@ class TreeNode:
         self.right = right
 def countNodes(root: Optional[TreeNode]) -> int:
     return 1 + countNodes(root.left) + countNodes(root.right) if root else 0
+
+
+# Using binary search technique
