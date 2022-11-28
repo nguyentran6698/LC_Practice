@@ -1,30 +1,26 @@
-def solution(root):
-    res = 0
-
-    def dfs(node):
-        if node == None:
-            return 0
-        nonlocal res
-        res += node.val
-        dfs(node.left)
-        dfs(node.right)
-
-    dfs(root)
-    return res
+from collections import Counter
 
 
-def solution2(root):
-    res = 0
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+def frequent_subtree_sum(root):
     if root == None:
-        return res
+        return None
 
-    stack = []
-    stack.append(root)
+    c = Counter()
 
-    while stack:
-        node = stack.pop()
-        res += node.val
-        stack.append(node.left)
-        stack.append(node.right)
+    def get_subtree_sum(node):
+        if node is None:
+            return 0
+        s = node.val + get_subtree_sum(node.left) + get_subtree_sum(node.right)
+        c[s] += 1
+        return s
 
-    return res
+    get_subtree_sum(root)
+
+    return c.most_common(1)[0]
