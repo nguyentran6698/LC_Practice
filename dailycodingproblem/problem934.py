@@ -2,11 +2,10 @@ from collections import defaultdict
 
 
 def solution(s: str):
-    d = defaultdict(int)
-    for e in s:
-        d[e] += 1
-        if d[e] > 1:
-            return e
+    seen = set()
+    for char in s:
+        if char in seen:
+            return char
     return None
 
 
