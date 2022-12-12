@@ -17,9 +17,6 @@ def solution(n,roads):
     dfs(0)
     return ret
 
-
-                
-
 n = 7
 roads = [[1,3,1484],[3,2,3876],[2,4,6823],[6,7,579],[5,6,4436],[4,5,8830]]
 print(solution(n,roads))
