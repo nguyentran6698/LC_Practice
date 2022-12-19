@@ -31,4 +31,4 @@ class Solution:
                 elif board[r][c] =="E":
                     board[r][c] = "O"
     # Union Ways
-    def solve(self, board: List[List[str]]) -> None:
+    # def solve(self, board: List[List[str]]) -> None:
