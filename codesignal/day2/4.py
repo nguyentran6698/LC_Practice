@@ -1,7 +1,7 @@
 def solution(queryType,query):
     h = {}
-    offSetK = 0
-    offSetV = 0
+    offSetK = [0] * len(query)
+    offSetV = [0] * len(query)
     cnt = 0
     for i in range(len(queryType)):
         typeQ = queryType[i]
@@ -14,7 +14,6 @@ def solution(queryType,query):
             offSetK += query[i][0]
         else:
             k = query[i][0] - offSetK
-            print(k)
             cnt += (h[k] + offSetV)
     return cnt
 
@@ -29,6 +28,8 @@ def solution(queryType,query):
 
 
 queryType = ["insert","insert","addToValue","addToKey","get"]
+queryType = ["insert","addToValue","get","insert","addToKey","addToValue","get"]
 query = [[1,2],[2,3],[2],[1],[3]]
+query = [[1,2],[2],[1],[2,3],[1],[-1],[3]]
 
 print(solution(queryType,query))
