@@ -1,4 +1,5 @@
 def solution(numbers):
+    change = False
     def swap(x):
         s = 0 
         i = len(str(x)) - 1
@@ -8,9 +9,15 @@ def solution(numbers):
             i -= 1
         return s
               
-    for i in range(len(numbers) - 1):
-        if numbers[i] > numbers[i+1]:
-            numbers[i] = swap(numbers[i])
+    for i in range(1,len(numbers)):
+        if numbers[i-1] < numbers[i]:
+            continue
+        if numbers[i-1] < 10 and numbers[i] < 10:
+            return False
+        before = 0
+        if i >= 2:
+            before = numbers[i-2]
+            
 
     for i in range(len(numbers) - 1):
         if numbers[i] >= numbers[i+1]:
