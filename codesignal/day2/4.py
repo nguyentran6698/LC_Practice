@@ -17,16 +17,6 @@ def solution(queryType,query):
             cnt += (h[k] + offSetV)
     return cnt
 
-
-
-
-
-
-
-
-
-
-
 queryType = ["insert","insert","addToValue","addToKey","get"]
 queryType = ["insert","addToValue","get","insert","addToKey","addToValue","get"]
 query = [[1,2],[2,3],[2],[1],[3]]

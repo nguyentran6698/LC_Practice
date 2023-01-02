@@ -3,8 +3,6 @@ def is_valid_cut(wood, cur_len, k):
     for w in wood:
         pieces += w // cur_len
     return True if pieces >= k else False
-
-
 def solution(wood, k):
     max_len = max(wood)
     left, right = 1, max_len

@@ -7,8 +7,8 @@ def solution(numbers):
     for i in range(len(numbers)):
         dv[numbers[i]] = i
     
-    while pow(2,idx) <= (v * 2):
-        d.add(pow(2,idx))
+    while idx * idx <= v * v:
+        d.add(idx * idx )
         idx += 1
     setN = set(numbers)
     for i in range(len(numbers)):
@@ -33,4 +33,4 @@ def solution2(numbers):
             if (key - num) in key_map:
                 cnt += 1
     return cnt
-print(solution2([2]))
+print(solution2([-1, 18, 3, 1, 5]))
