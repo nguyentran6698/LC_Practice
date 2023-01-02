@@ -1,3 +1,11 @@
+class TreeNode:
+    def __init__(self, val):
+        self.root = None
+        self.left = None
+        self.right = None
+        self.val = val
+
+
 def solution(nums):
     def helper(left, right):
         mid = left + (right - left) // 2
